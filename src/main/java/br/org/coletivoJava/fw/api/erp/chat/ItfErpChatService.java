@@ -17,6 +17,8 @@ import java.util.List;
  */
 public interface ItfErpChatService {
 
+    public String gerarSenhaPadrao(ItfUsuarioChat pUsuario) throws ErroRegraDeNEgocioChat;
+
     public String gerarAliasIdentificadorCanonico(String nomeCurtoAlias);
 
     public ItfChatSalaBean getSalaByCodigo(String pCodigo) throws ErroConexaoServicoChat;
@@ -82,7 +84,7 @@ public interface ItfErpChatService {
 
     public ItfUsuarioChat usuarioCriar(ItfUsuarioChat pUsuario, String pSenha) throws ErroConexaoServicoChat;
 
-    public boolean usuarioAtualizarSenha(String pCodigoUsuario, String pNovaSenha) throws ErroConexaoServicoChat;
+    public boolean usuarioAtualizarSenha(String pCodigoUsuario, String pNovaSenha) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
 
     public ItfUsuarioChat getUsuarioChatByLoginSessaoAtual() throws ErroConexaoServicoChat;
 
@@ -102,14 +104,18 @@ public interface ItfErpChatService {
 
     public boolean usuarioLogadovalidarChaveAcessoRegistrada();
 
-    public boolean validarTokenOuGerarNovo(ItfUsuarioChat pUsuario, String pCodigo, String pSenha);
+    public boolean validarTokenOuGerarNovo(ItfUsuarioChat pUsuario, String pCodigo, String pSenha) throws ErroRegraDeNEgocioChat, ErroConexaoServicoChat;
 
     public boolean validarTokenSistema();
 
     public ItfUsuarioChat getUsuarioAdmin();
 
-    public ItfUsuarioChat gerarUsuarioLead(String pNome, String pWaID) throws ErroConexaoServicoChat;
+    public String gerarCodigoUsuarioContato(String pNome, String pWhatsappTelefone) throws ErroRegraDeNEgocioChat, ErroConexaoServicoChat;
 
-    public ItfUsuarioChat gerarUsuarioAtendimento(String pNome, String pEmail) throws ErroConexaoServicoChat;
+    public ItfUsuarioChat gerarUsuarioContato(String pNome, String pWhatsappTelefone) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
+
+    public String gerarCodigoUsuarioAtendimento(String pNome, String pEmail) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
+
+    public ItfUsuarioChat gerarUsuarioAtendimento(String pNome, String pEmail) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
 
 }
