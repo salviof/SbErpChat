@@ -118,4 +118,6 @@ public interface ItfErpChatService {
 
     public ItfUsuarioChat gerarUsuarioAtendimento(String pNome, String pEmail) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
 
+    public void salaAbrirSessao(ItfChatSalaBean pSala) throws ErroConexaoServicoChat;
+
 }
