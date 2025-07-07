@@ -64,6 +64,8 @@ public interface ItfErpChatService {
 
     public boolean salaRemoverMembro(ItfChatSalaBean pSala, String pCodigoMembro) throws ErroConexaoServicoChat;
 
+    public boolean salaLerUltimoEvento(String pCodigoSala, ItfUsuarioChat pUsuarioLeitura) throws ErroConexaoServicoChat;
+
     public List<ItfUsuarioChat> atualizarListaDeUsuarios() throws ErroConexaoServicoChat;
 
     public ItfUsuarioChat getUsuarioByEmail(String pEmail) throws ErroConexaoServicoChat;
