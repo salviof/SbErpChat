@@ -7,7 +7,10 @@ package br.org.coletivoJava.fw.api.erp.chat;
 import br.org.coletivoJava.fw.api.erp.chat.model.ItfUsuarioChat;
 import br.org.coletivoJava.fw.api.erp.chat.model.ItfChatSalaBean;
 import br.org.coletivoJava.fw.api.erp.chat.model.ItfNotificacaoUsuarioChat;
+import br.org.coletivoJava.fw.api.erp.chat.model.ItfSalaChatSessaoEescutaAtiva;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import jakarta.json.JsonArray;
+import jakarta.json.JsonObject;
 import java.io.InputStream;
 import java.util.List;
 
@@ -54,7 +57,7 @@ public interface ItfErpChatService {
 
     public String salaEnviarAudio(ItfChatSalaBean pSala, ItfUsuarioChat pUsuario, String codigoMensagem, String pNomeArquivo, InputStream pInput) throws ErroConexaoServicoChat;
 
-    public boolean salaNotificarLeitura(ItfChatSalaBean pSala, ItfUsuarioChat pUsuario, String pCodigoReciboMatix);
+    public boolean salaNotificarLeitura(String pCodigoSala, ItfUsuarioChat pUsuario, String pCodigoReciboMatix);
 
     public boolean salaExcluir(ItfChatSalaBean pCondigoSala) throws ErroConexaoServicoChat;
 
@@ -65,6 +68,8 @@ public interface ItfErpChatService {
     public boolean salaRemoverMembro(ItfChatSalaBean pSala, String pCodigoMembro) throws ErroConexaoServicoChat;
 
     public boolean salaLerUltimoEvento(String pCodigoSala, ItfUsuarioChat pUsuarioLeitura) throws ErroConexaoServicoChat;
+
+    public JsonArray salaLerUltimasMensagens(String pCodigoSala) throws ErroConexaoServicoChat;
 
     public List<ItfUsuarioChat> atualizarListaDeUsuarios() throws ErroConexaoServicoChat;
 
@@ -120,6 +125,10 @@ public interface ItfErpChatService {
 
     public ItfUsuarioChat gerarUsuarioAtendimento(String pNome, String pEmail) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
 
-    public void salaAbrirSessao(ItfChatSalaBean pSala) throws ErroConexaoServicoChat;
+    public ItfSalaChatSessaoEescutaAtiva salaAbrirSessao(ItfChatSalaBean pSala) throws ErroConexaoServicoChat;
+
+    public boolean isUmUsuarioAtendimento(ItfUsuarioChat pUsuarioAtendimento);
+
+    public boolean isUmUsuarioContato(ItfUsuarioChat pUsuarioAtendimento);
 
 }
