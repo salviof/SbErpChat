@@ -10,14 +10,8 @@ import br.org.coletivoJava.fw.api.erp.chat.ErroMtxParalizacaoDeProcessamento;
  *
  * @author salvio
  */
-public interface ItfListenerEventoMatrix {
+public interface ItfListenerEventoComandoAtendimento {
 
-    public boolean isElegivel(ItfEventoMatix pEvento);
-
-    public void processarEvento(ItfEventoMatix pEvento) throws ErroMtxParalizacaoDeProcessamento;
-
-    public boolean isSalaComAutoMonitoramento(String pNomeSAla);
-
-    public ItfChatSalaBean getSala();
+    public void processarComando(ComandoDeAtendimento pComando) throws ErroComandoAtendimentoInvalido;
 
 }
