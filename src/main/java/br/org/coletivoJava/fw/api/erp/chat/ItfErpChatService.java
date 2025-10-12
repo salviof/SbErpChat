@@ -20,7 +20,7 @@ import java.util.List;
  */
 public interface ItfErpChatService {
 
-    public String gerarSenhaPadrao(ItfUsuarioChat pUsuario) throws ErroRegraDeNEgocioChat;
+    public String gerarSenhaPadrao(ItfUsuario pUsuario, String pCodigoUsuario) throws ErroRegraDeNEgocioChat;
 
     public String gerarAliasIdentificadorCanonico(String nomeCurtoAlias);
 
@@ -67,6 +67,8 @@ public interface ItfErpChatService {
 
     public boolean salaRemoverMembro(ItfChatSalaBean pSala, String pCodigoMembro) throws ErroConexaoServicoChat;
 
+    public boolean salaTornarMembroAdmin(ItfChatSalaBean pSala, String pCodigoMembro) throws ErroConexaoServicoChat;
+
     public boolean salaLerUltimoEvento(String pCodigoSala, ItfUsuarioChat pUsuarioLeitura) throws ErroConexaoServicoChat;
 
     public JsonArray salaLerUltimasMensagens(String pCodigoSala) throws ErroConexaoServicoChat;
@@ -111,13 +113,13 @@ public interface ItfErpChatService {
 
     public boolean usuarioLogadovalidarChaveAcessoRegistrada();
 
-    public boolean validarTokenOuGerarNovo(ItfUsuarioChat pUsuario, String pCodigo, String pSenha) throws ErroRegraDeNEgocioChat, ErroConexaoServicoChat;
+    public boolean validarTokenOuGerarNovo(ItfUsuario pUsuario, String pCodigo, String pSenha) throws ErroRegraDeNEgocioChat, ErroConexaoServicoChat;
 
     public boolean validarTokenSistema();
 
     public ItfUsuarioChat getUsuarioAdmin();
 
-    public String gerarCodigoUsuarioContato(String pNome, String pWhatsappTelefone) throws ErroRegraDeNEgocioChat, ErroConexaoServicoChat;
+    public String gerarCodigoUsuarioContato(String pWhatsappTelefone) throws ErroRegraDeNEgocioChat, ErroConexaoServicoChat;
 
     public ItfUsuarioChat gerarUsuarioContato(String pNome, String pWhatsappTelefone) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
 

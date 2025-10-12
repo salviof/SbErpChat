@@ -19,4 +19,6 @@ public interface ItfUsuarioChat extends ItfUsuario {
 
     public List<String> getEmailsSecundarios();
 
+    public String getCodigoCRMUniversal();
+
 }
