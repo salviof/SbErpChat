@@ -12,6 +12,6 @@ public interface ItfSalaChatSessaoEescutaAtiva {
 
     public ItfListenerEventoMatrix getEscuta();
 
-    public ItfChatSalaBean getSala();
+    public ComoChatSalaBean getSala();
 
 }

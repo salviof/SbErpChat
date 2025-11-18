@@ -4,15 +4,15 @@
  */
 package br.org.coletivoJava.fw.api.erp.chat;
 
-import br.org.coletivoJava.fw.api.erp.chat.model.ItfUsuarioChat;
-import br.org.coletivoJava.fw.api.erp.chat.model.ItfChatSalaBean;
+import br.org.coletivoJava.fw.api.erp.chat.model.ComoUsuarioChat;
 import br.org.coletivoJava.fw.api.erp.chat.model.ItfNotificacaoUsuarioChat;
 import br.org.coletivoJava.fw.api.erp.chat.model.ItfSalaChatSessaoEescutaAtiva;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import jakarta.json.JsonArray;
 import jakarta.json.JsonObject;
 import java.io.InputStream;
 import java.util.List;
+import br.org.coletivoJava.fw.api.erp.chat.model.ComoChatSalaBean;
 
 /**
  *
@@ -20,17 +20,17 @@ import java.util.List;
  */
 public interface ItfErpChatService {
 
-    public String gerarSenhaPadrao(ItfUsuario pUsuario, String pCodigoUsuario) throws ErroRegraDeNEgocioChat;
+    public String gerarSenhaPadrao(ComoUsuario pUsuario, String pCodigoUsuario) throws ErroRegraDeNEgocioChat;
 
     public String gerarAliasIdentificadorCanonico(String nomeCurtoAlias);
 
-    public ItfChatSalaBean getSalaByCodigo(String pCodigo) throws ErroConexaoServicoChat;
+    public ComoChatSalaBean getSalaByCodigo(String pCodigo) throws ErroConexaoServicoChat;
 
-    public ItfChatSalaBean getSalaByNome(String pNome) throws ErroConexaoServicoChat;
+    public ComoChatSalaBean getSalaByNome(String pNome) throws ErroConexaoServicoChat;
 
-    public ItfChatSalaBean getSalaByAlias(String pAlias) throws ErroConexaoServicoChat;
+    public ComoChatSalaBean getSalaByAlias(String pAlias) throws ErroConexaoServicoChat;
 
-    public ItfChatSalaBean getSalaCriandoSeNaoExistir(ItfChatSalaBean pSala) throws ErroConexaoServicoChat;
+    public ComoChatSalaBean getSalaCriandoSeNaoExistir(ComoChatSalaBean pSala) throws ErroConexaoServicoChat;
 
     /**
      *
@@ -43,67 +43,67 @@ public interface ItfErpChatService {
      * @return
      * @throws ErroConexaoServicoChat
      */
-    public ItfChatSalaBean getSalaCriandoSeNaoExistir(ItfChatSalaBean pSala, String pCodigoIndiceSala) throws ErroConexaoServicoChat;
+    public ComoChatSalaBean getSalaCriandoSeNaoExistir(ComoChatSalaBean pSala, String pCodigoIndiceSala) throws ErroConexaoServicoChat;
 
-    public ItfChatSalaBean getSalaAtualizada(ItfChatSalaBean pSala) throws ErroConexaoServicoChat;
+    public ComoChatSalaBean getSalaAtualizada(ComoChatSalaBean pSala) throws ErroConexaoServicoChat;
 
-    public String salaEnviarMesagem(ItfChatSalaBean pSala, ItfUsuarioChat pUsuario, String codigoMensagem, String pMensagem) throws ErroConexaoServicoChat;
+    public String salaEnviarMesagem(ComoChatSalaBean pSala, ComoUsuarioChat pUsuario, String codigoMensagem, String pMensagem) throws ErroConexaoServicoChat;
 
-    public String salaEnviarImagem(ItfChatSalaBean pSala, ItfUsuarioChat pUsuario, String codigoMensagem, String pNomeArquivo, InputStream pInput) throws ErroConexaoServicoChat;
+    public String salaEnviarImagem(ComoChatSalaBean pSala, ComoUsuarioChat pUsuario, String codigoMensagem, String pNomeArquivo, InputStream pInput) throws ErroConexaoServicoChat;
 
-    public String salaEnviarDocumento(ItfChatSalaBean pSala, ItfUsuarioChat pUsuario, String pCodigoMensagem, String pNomeArquivo, InputStream pInput) throws ErroConexaoServicoChat;
+    public String salaEnviarDocumento(ComoChatSalaBean pSala, ComoUsuarioChat pUsuario, String pCodigoMensagem, String pNomeArquivo, InputStream pInput) throws ErroConexaoServicoChat;
 
-    public String salaEnviarVideo(ItfChatSalaBean pSala, ItfUsuarioChat pUsuario, String codigoMensagem, String pNomeArquivo, InputStream pInput) throws ErroConexaoServicoChat;
+    public String salaEnviarVideo(ComoChatSalaBean pSala, ComoUsuarioChat pUsuario, String codigoMensagem, String pNomeArquivo, InputStream pInput) throws ErroConexaoServicoChat;
 
-    public String salaEnviarAudio(ItfChatSalaBean pSala, ItfUsuarioChat pUsuario, String codigoMensagem, String pNomeArquivo, InputStream pInput) throws ErroConexaoServicoChat;
+    public String salaEnviarAudio(ComoChatSalaBean pSala, ComoUsuarioChat pUsuario, String codigoMensagem, String pNomeArquivo, InputStream pInput) throws ErroConexaoServicoChat;
 
-    public boolean salaNotificarLeitura(String pCodigoSala, ItfUsuarioChat pUsuario, String pCodigoReciboMatix);
+    public boolean salaNotificarLeitura(String pCodigoSala, ComoUsuarioChat pUsuario, String pCodigoReciboMatix);
 
-    public boolean salaExcluir(ItfChatSalaBean pCondigoSala) throws ErroConexaoServicoChat;
+    public boolean salaExcluir(ComoChatSalaBean pCondigoSala) throws ErroConexaoServicoChat;
 
-    public boolean salaAtualizarMembros(ItfChatSalaBean pSala, List<ItfUsuarioChat> pLista) throws ErroConexaoServicoChat;
+    public boolean salaAtualizarMembros(ComoChatSalaBean pSala, List<ComoUsuarioChat> pLista) throws ErroConexaoServicoChat;
 
-    public boolean salaAdicionarMembro(ItfChatSalaBean pSala, String pCodigoMembro) throws ErroConexaoServicoChat;
+    public boolean salaAdicionarMembro(ComoChatSalaBean pSala, String pCodigoMembro) throws ErroConexaoServicoChat;
 
-    public boolean salaRemoverMembro(ItfChatSalaBean pSala, String pCodigoMembro) throws ErroConexaoServicoChat;
+    public boolean salaRemoverMembro(ComoChatSalaBean pSala, String pCodigoMembro) throws ErroConexaoServicoChat;
 
-    public boolean salaTornarMembroAdmin(ItfChatSalaBean pSala, String pCodigoMembro) throws ErroConexaoServicoChat;
+    public boolean salaTornarMembroAdmin(ComoChatSalaBean pSala, String pCodigoMembro) throws ErroConexaoServicoChat;
 
-    public boolean salaLerUltimoEvento(String pCodigoSala, ItfUsuarioChat pUsuarioLeitura) throws ErroConexaoServicoChat;
+    public boolean salaLerUltimoEvento(String pCodigoSala, ComoUsuarioChat pUsuarioLeitura) throws ErroConexaoServicoChat;
 
     public JsonArray salaLerUltimasMensagens(String pCodigoSala) throws ErroConexaoServicoChat;
 
-    public List<ItfUsuarioChat> atualizarListaDeUsuarios() throws ErroConexaoServicoChat;
+    public List<ComoUsuarioChat> atualizarListaDeUsuarios() throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChat getUsuarioByEmail(String pEmail) throws ErroConexaoServicoChat;
+    public ComoUsuarioChat getUsuarioByEmail(String pEmail) throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChat getUsuarioByTelefone(String pTelefone) throws ErroConexaoServicoChat;
+    public ComoUsuarioChat getUsuarioByTelefone(String pTelefone) throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChat getUsuarioByCodigo(String pCodigo) throws ErroConexaoServicoChat;
+    public ComoUsuarioChat getUsuarioByCodigo(String pCodigo) throws ErroConexaoServicoChat;
 
     public List<ItfNotificacaoUsuarioChat> getUltimasNotificacoesUsuarioAdmin() throws ErroConexaoServicoChat;
 
-    public List<ItfUsuarioChat> getUsuarios() throws ErroConexaoServicoChat;
+    public List<ComoUsuarioChat> getUsuarios() throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChat usuarioCriar(ItfUsuarioChat pUsuario) throws ErroConexaoServicoChat;
+    public ComoUsuarioChat usuarioCriar(ComoUsuarioChat pUsuario) throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChat usuarioAtualizar(ItfUsuarioChat pUsuario) throws ErroConexaoServicoChat;
+    public ComoUsuarioChat usuarioAtualizar(ComoUsuarioChat pUsuario) throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChat usuarioAtualizar(String pCodigo, String pNome, String pEmail, String pTelefone) throws ErroConexaoServicoChat;
+    public ComoUsuarioChat usuarioAtualizar(String pCodigo, String pNome, String pEmail, String pTelefone) throws ErroConexaoServicoChat;
 
-    public ItfUsuarioChat usuarioCriar(ItfUsuarioChat pUsuario, String pSenha) throws ErroConexaoServicoChat;
+    public ComoUsuarioChat usuarioCriar(ComoUsuarioChat pUsuario, String pSenha) throws ErroConexaoServicoChat;
 
     public boolean usuarioAtualizarSenha(String pCodigoUsuario, String pNovaSenha) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
 
-    public ItfUsuarioChat getUsuarioChatByLoginSessaoAtual() throws ErroConexaoServicoChat;
+    public ComoUsuarioChat getUsuarioChatByLoginSessaoAtual() throws ErroConexaoServicoChat;
 
-    public boolean tokenGestaoEfetuarLogin(ItfUsuario pUsuario) throws ErroConexaoServicoChat;
+    public boolean tokenGestaoEfetuarLogin(ComoUsuario pUsuario) throws ErroConexaoServicoChat;
 
-    public boolean tokenGestaoEfetuarLogin(ItfUsuarioChat pUsuario, String pSenha) throws ErroConexaoServicoChat;
+    public boolean tokenGestaoEfetuarLogin(ComoUsuarioChat pUsuario, String pSenha) throws ErroConexaoServicoChat;
 
     public boolean isUsuarioOnlineByCodUser(String pCodigo) throws ErroConexaoServicoChat;
 
-    public ItfChatSalaBean espacoCriar(String pNomeVisivel, String pAliasUnico) throws ErroConexaoServicoChat;
+    public ComoChatSalaBean espacoCriar(String pNomeVisivel, String pAliasUnico) throws ErroConexaoServicoChat;
 
     public boolean espacoAdicionarSala(String pCodigoSpace, String pCodigoSala) throws ErroConexaoServicoChat;
 
@@ -113,24 +113,24 @@ public interface ItfErpChatService {
 
     public boolean usuarioLogadovalidarChaveAcessoRegistrada();
 
-    public boolean validarTokenOuGerarNovo(ItfUsuario pUsuario, String pCodigo, String pSenha) throws ErroRegraDeNEgocioChat, ErroConexaoServicoChat;
+    public boolean validarTokenOuGerarNovo(ComoUsuario pUsuario, String pCodigo, String pSenha) throws ErroRegraDeNEgocioChat, ErroConexaoServicoChat;
 
     public boolean validarTokenSistema();
 
-    public ItfUsuarioChat getUsuarioAdmin();
+    public ComoUsuarioChat getUsuarioAdmin();
 
     public String gerarCodigoUsuarioContato(String pWhatsappTelefone) throws ErroRegraDeNEgocioChat, ErroConexaoServicoChat;
 
-    public ItfUsuarioChat gerarUsuarioContato(String pNome, String pWhatsappTelefone) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
+    public ComoUsuarioChat gerarUsuarioContato(String pNome, String pWhatsappTelefone) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
 
     public String gerarCodigoUsuarioAtendimento(String pNome, String pEmail) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
 
-    public ItfUsuarioChat gerarUsuarioAtendimento(String pNome, String pEmail) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
+    public ComoUsuarioChat gerarUsuarioAtendimento(String pNome, String pEmail) throws ErroConexaoServicoChat, ErroRegraDeNEgocioChat;
 
-    public ItfSalaChatSessaoEescutaAtiva salaAbrirSessao(ItfChatSalaBean pSala) throws ErroConexaoServicoChat;
+    public ItfSalaChatSessaoEescutaAtiva salaAbrirSessao(ComoChatSalaBean pSala) throws ErroConexaoServicoChat;
 
-    public boolean isUmUsuarioAtendimento(ItfUsuarioChat pUsuarioAtendimento);
+    public boolean isUmUsuarioAtendimento(ComoUsuarioChat pUsuarioAtendimento);
 
-    public boolean isUmUsuarioContato(ItfUsuarioChat pUsuarioAtendimento);
+    public boolean isUmUsuarioContato(ComoUsuarioChat pUsuarioAtendimento);
 
 }

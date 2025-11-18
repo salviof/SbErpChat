@@ -4,13 +4,13 @@
  */
 package br.org.coletivoJava.fw.api.erp.chat.model;
 
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimples;
 
 /**
  *
  * @author salvio
  */
-public interface ItfNotificacaoUsuarioChat extends ItfBeanSimples {
+public interface ItfNotificacaoUsuarioChat extends ComoEntidadeSimples {
 
     public String getTipoEvento();
 

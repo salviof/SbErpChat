@@ -4,13 +4,13 @@
  */
 package br.org.coletivoJava.fw.api.erp.chat.model;
 
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimplesSomenteLeitura;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimplesSomenteLeitura;
 
 /**
  *
  * @author salvio
  */
-public interface ItfBeanVinculadoChat extends ItfBeanSimplesSomenteLeitura {
+public interface ComoEntidadeVinculadoChat extends ComoEntidadeSimplesSomenteLeitura {
 
     public String getCodigoCanalChat();
 
