@@ -1,6 +1,6 @@
 package br.org.coletivoJava.fw.api.erp.chat.model;
 
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.ComoEntidadeSimples;
 import java.util.List;
 
 public interface ComoChatSalaBean extends ComoEntidadeSimples {

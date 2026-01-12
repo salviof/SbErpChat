@@ -7,7 +7,7 @@ package br.org.coletivoJava.fw.api.erp.chat;
 import br.org.coletivoJava.fw.api.erp.chat.model.ComoUsuarioChat;
 import br.org.coletivoJava.fw.api.erp.chat.model.ItfNotificacaoUsuarioChat;
 import br.org.coletivoJava.fw.api.erp.chat.model.ItfSalaChatSessaoEescutaAtiva;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.ComoUsuario;
 import jakarta.json.JsonArray;
 import jakarta.json.JsonObject;
 import java.io.InputStream;

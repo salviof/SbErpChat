@@ -9,10 +9,10 @@ package br.org.coletivoJava.fw.api.erp.chat;
  *
  * @author desenvolvedorninja01
  */
-import com.super_bits.modulosSB.SBCore.modulos.erp.ApiERPColetivoJavaFW;
+import com.super_bits.modulosSB.SBCore.modulos.erp.InfoApiERPCarameloCode;
 import com.super_bits.modulosSB.SBCore.modulos.erp.ItfApiErpSuperBits;
 
-@ApiERPColetivoJavaFW(descricaoApi = "Chats Casanova digital", nomeApi = "Chat", slugInicial = "Chat")
+@InfoApiERPCarameloCode(descricaoApi = "Chats Casanova digital", nomeApi = "Chat", slugInicial = "Chat")
 public enum ERPChat implements ItfApiErpSuperBits<ItfErpChatService> {
 
     MATRIX_ORG,
