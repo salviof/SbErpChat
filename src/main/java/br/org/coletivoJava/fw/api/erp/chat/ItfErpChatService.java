@@ -45,6 +45,8 @@ public interface ItfErpChatService {
      */
     public ComoChatSalaBean getSalaCriandoSeNaoExistir(ComoChatSalaBean pSala, String pCodigoIndiceSala) throws ErroConexaoServicoChat;
 
+    public ComoChatSalaBean getSalaRenomear(ComoChatSalaBean pSala, String novaSala) throws ErroConexaoServicoChat;
+
     public ComoChatSalaBean getSalaAtualizada(ComoChatSalaBean pSala) throws ErroConexaoServicoChat;
 
     public String salaEnviarMesagem(ComoChatSalaBean pSala, ComoUsuarioChat pUsuario, String codigoMensagem, String pMensagem) throws ErroConexaoServicoChat;
