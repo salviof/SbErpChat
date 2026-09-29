@@ -59,6 +59,20 @@ public interface ItfErpChatService {
 
     public String salaEnviarAudio(ComoChatSalaBean pSala, ComoUsuarioChat pUsuario, String codigoMensagem, String pNomeArquivo, InputStream pInput) throws ErroConexaoServicoChat;
 
+    /**
+     * Reage a um evento da sala em nome do usuário.
+     *
+     * Default para não obrigar as implementações que não suportam reação.
+     *
+     * @param pCodigoTransacao código único do envio (ex.: wamid da reação),
+     * para a reentrega não duplicar a reação
+     * @return código do evento da reação, ou null se não foi enviada
+     */
+    public default String salaEnviarReacao(ComoChatSalaBean pSala, ComoUsuarioChat pUsuario, String pCodigoTransacao,
+            String pCodigoEventoReagido, String pEmoji) throws ErroConexaoServicoChat {
+        throw new UnsupportedOperationException("Reação não suportada por " + getClass().getSimpleName());
+    }
+
     public boolean salaNotificarLeitura(String pCodigoSala, ComoUsuarioChat pUsuario, String pCodigoReciboMatix);
 
     public boolean salaExcluir(ComoChatSalaBean pCondigoSala) throws ErroConexaoServicoChat;
