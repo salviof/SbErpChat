@@ -18,6 +18,12 @@ public interface ItfListenerEventoMatrix {
 
     public boolean isSalaComAutoMonitoramento(String pNomeSAla);
 
+    public boolean isEventoAtivaMonitoramento(String pCodigoSala, ItfEventoMatix pEvento);
+
     public ComoChatSalaBean getSala();
+
+    public String getCodigoSala();
+
+    public void setSalaAtualizada(ComoChatSalaBean pDadosSalaAtualizados);
 
 }

@@ -13,12 +13,20 @@ import jakarta.json.JsonObject;
 import java.io.InputStream;
 import java.util.List;
 import br.org.coletivoJava.fw.api.erp.chat.model.ComoChatSalaBean;
+import br.org.coletivoJava.fw.api.erp.chat.model.ComoGestorUrlClienteChat;
+import br.org.coletivoJava.fw.api.erp.chat.model.ItfListenerEventoMatrix;
 
 /**
  *
  * @author salvio
  */
 public interface ItfErpChatService {
+
+    public void registrarClasseDeEscutaSalas(Class<? extends ItfListenerEventoMatrix> pClasseEscuta) throws ErroConexaoServicoChat;
+
+    public void registrarClasseConfigUrlCliente(Class<? extends ComoGestorUrlClienteChat> pClasseEscuta) throws ErroConexaoServicoChat;
+
+    public ComoGestorUrlClienteChat getServicoUrlCliente();
 
     public String gerarSenhaPadrao(ComoUsuario pUsuario, String pCodigoUsuario) throws ErroRegraDeNEgocioChat;
 
